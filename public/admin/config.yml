@@ -71,4 +71,9 @@ collections:
       - { label: "1st Female Sold", name: "firstFemaleSold", widget: "boolean", default: false }
       - { label: "2nd Female Sold", name: "secondFemaleSold", widget: "boolean", default: false }
       - { label: "3rd Female Sold", name: "thirdFemaleSold", widget: "boolean", default: false }
+      - { label: "Items", name: "items", widget: "list", fields: [
+        { label: "Title", name: "title", widget: "string" },
+        { label: "Price", name: "price", widget: "number" },
+        { label: "Sold", name: "sold", widget: "boolean", default: false }
+      ]}
       - { label: "Description", name: "body", widget: "markdown" }

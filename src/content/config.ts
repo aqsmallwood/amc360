@@ -34,6 +34,11 @@ const breedingsCollection = defineCollection({
     firstFemaleSold: z.boolean(),
     secondFemaleSold: z.boolean(),
     thirdFemaleSold: z.boolean(),
+    items: z.array(z.object({
+      title: z.string(),
+      price: z.number(),
+      sold: z.boolean(),
+    })),
   }),
 });
 

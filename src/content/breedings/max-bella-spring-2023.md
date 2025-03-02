@@ -16,6 +16,19 @@ thirdMaleSold: false
 firstFemaleSold: true
 secondFemaleSold: false
 thirdFemaleSold: false
+items:
+  - title: "1st Male"
+    price: 2500
+    sold: true
+  - title: "2nd Male"
+    price: 2300
+    sold: true
+  - title: "3rd Male"
+    price: 2200
+    sold: false
+  - title: "1st Female"
+    price: 2700
+    sold: true
 ---
 
 # Max & Bella Spring 2023 Litter
