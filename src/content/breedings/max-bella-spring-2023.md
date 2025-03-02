@@ -1,9 +1,9 @@
 ---
-title: "Max & Bella Spring 2023 Litter"
-father: "max"
-mother: "bella"
-fatherImage: "/images/max.jpg"
-motherImage: "/images/bella.jpg"
+title: "Benny x Envy"
+father: "Benny"
+mother: "Envy"
+fatherImage: "/images/benny.jpg"
+motherImage: "/images/envy.jpg"
 firstMalePrice: 2500
 secondMalePrice: 2300
 thirdMalePrice: 2200

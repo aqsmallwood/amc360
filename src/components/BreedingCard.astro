@@ -5,81 +5,37 @@ interface Props {
   fatherName: string;
   motherImage: string;
   motherName: string;
-  prices: {
-    firstMale: number;
-    secondMale: number;
-    thirdMale: number;
-    firstFemale: number;
-    secondFemale: number;
-    thirdFemale: number;
-  };
-  sold: {
-    firstMale: boolean;
-    secondMale: boolean;
-    thirdMale: boolean;
-    firstFemale: boolean;
-    secondFemale: boolean;
-    thirdFemale: boolean;
-  };
-  url: string;
+  items: {
+    title: string;
+    price: number;
+    sold: boolean;
+  }[];
 }
 
-const { title, fatherImage, fatherName, motherImage, motherName, prices, sold, url } = Astro.props;
+const { title, fatherImage, fatherName, motherImage, motherName, prices, sold, items } = Astro.props;
 ---
-<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-  <div class="p-6">
-    <h3 class="text-2xl font-bold mb-4">{title}</h3>
+<div class="bg-stone-950 overflow-hidden rounded-lg p-8">
+  <div>
+    <h3 class="text-3xl text-center font-bold mb-4 font-wild text-amber-500">{title}</h3>
     
-    <div class="grid grid-cols-2 gap-6 mb-6">
+    <div class="grid grid-cols-2 gap-6 mb-6 font-logo">
       <div>
         <h4 class="text-lg font-semibold mb-2">Father: {fatherName}</h4>
-        <img src={fatherImage} alt={fatherName} class="w-full h-48 object-cover rounded" />
+        <img src={fatherImage} alt={fatherName} class="w-full object-cover rounded" />
       </div>
       <div>
         <h4 class="text-lg font-semibold mb-2">Mother: {motherName}</h4>
-        <img src={motherImage} alt={motherName} class="w-full h-48 object-cover rounded" />
+        <img src={motherImage} alt={motherName} class="w-full object-cover rounded" />
       </div>
     </div>
     
-    <div class="grid grid-cols-2 gap-4 mb-4">
-      <div>
-        <h4 class="text-lg font-semibold mb-2">Males</h4>
-        <ul class="space-y-2">
-          <li class="flex justify-between">
-            <span>1st Male:</span> 
-            <span>{sold.firstMale ? 'SOLD' : `$${prices.firstMale}`}</span>
-          </li>
-          <li class="flex justify-between">
-            <span>2nd Male:</span> 
-            <span>{sold.secondMale ? 'SOLD' : `$${prices.secondMale}`}</span>
-          </li>
-          <li class="flex justify-between">
-            <span>3rd Male:</span> 
-            <span>{sold.thirdMale ? 'SOLD' : `$${prices.thirdMale}`}</span>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-lg font-semibold mb-2">Females</h4>
-        <ul class="space-y-2">
-          <li class="flex justify-between">
-            <span>1st Female:</span> 
-            <span>{sold.firstFemale ? 'SOLD' : `$${prices.firstFemale}`}</span>
-          </li>
-          <li class="flex justify-between">
-            <span>2nd Female:</span> 
-            <span>{sold.secondFemale ? 'SOLD' : `$${prices.secondFemale}`}</span>
-          </li>
-          <li class="flex justify-between">
-            <span>3rd Female:</span> 
-            <span>{sold.thirdFemale ? 'SOLD' : `$${prices.thirdFemale}`}</span>
-          </li>
-        </ul>
-      </div>
+    <div class="grid grid-cols-2 gap-4 mb-4 font-logo">
+      {items.map((item, index) => (
+        <div class="flex justify-between text-xl">
+          <span>{item.title}:</span> 
+          <span class={`font-bold ${item.sold ? 'text-red-500' : 'text-green-500'}`}>{item.sold ? 'SOLD' : `$${item.price}`}</span>
+        </div>
+      ))}
     </div>
-    
-    <a href={url} class="inline-block bg-stone-950 text-white px-4 py-2 rounded hover:bg-stone-950">
-      View Details
-    </a>
   </div>
 </div> 

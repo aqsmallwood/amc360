@@ -4,47 +4,24 @@ import BreedingCard from '../components/BreedingCard.astro';
 import { getCollection } from 'astro:content';
 
 const breedings = await getCollection('breedings');
-const maleDogs = await getCollection('dogs', ({ id }) => id.startsWith('males/'));
-const femaleDogs = await getCollection('dogs', ({ id }) => id.startsWith('females/'));
-
-// Create maps for easy lookup
-const maleDogsMap = new Map(maleDogs.map(dog => [dog.slug, dog]));
-const femaleDogsMap = new Map(femaleDogs.map(dog => [dog.slug, dog]));
 ---
 
 <Layout title="Breedings">
-  <div class="container mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-12 text-center">Our Breedings</h1>
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <div class="bg-stone-950 rounded-lg">
+      <h1 class="text-4xl mb-12 text-center font-logo font-semibold py-2">BREEDINGS</h1>
+    </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 gap-8 mx-auto max-w-2xl">
       {breedings.map(breeding => {
-        const father = maleDogsMap.get(breeding.data.father);
-        const mother = femaleDogsMap.get(breeding.data.mother);
-        
         return (
           <BreedingCard 
             title={breeding.data.title}
             fatherImage={breeding.data.fatherImage}
-            fatherName={father?.data.name || 'Unknown'}
+            fatherName={breeding.data.father}
             motherImage={breeding.data.motherImage}
-            motherName={mother?.data.name || 'Unknown'}
-            prices={{
-              firstMale: breeding.data.firstMalePrice,
-              secondMale: breeding.data.secondMalePrice,
-              thirdMale: breeding.data.thirdMalePrice,
-              firstFemale: breeding.data.firstFemalePrice,
-              secondFemale: breeding.data.secondFemalePrice,
-              thirdFemale: breeding.data.thirdFemalePrice
-            }}
-            sold={{
-              firstMale: breeding.data.firstMaleSold,
-              secondMale: breeding.data.secondMaleSold,
-              thirdMale: breeding.data.thirdMaleSold,
-              firstFemale: breeding.data.firstFemaleSold,
-              secondFemale: breeding.data.secondFemaleSold,
-              thirdFemale: breeding.data.thirdFemaleSold
-            }}
-            url={`/breedings/${breeding.slug}`}
+            motherName={breeding.data.mother}
+            items={breeding.data.items}
           />
         );
       })}
