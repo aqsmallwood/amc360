@@ -3,9 +3,9 @@ name: Benny The Butcher
 longAlias: BENNY THE BUTCHER of 360 AMERICAN BULLY CLUB
 image: /images/benny.jpg
 weight: 47
-headSize: -1
-height: -1
-stillGrowing: false
+headSize: 20
+height: 12
+stillGrowing: true
 order: 2
 ---
-THE BUTCHER IS HERE
+THE BUTCHER IS COMING
