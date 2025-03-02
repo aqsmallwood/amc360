@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+const contact = await getEntry('contact', 'contact');
+const { heading, phone, email } = contact.data;
 ---
 
 <Layout title="Contact Us">
@@ -11,7 +15,7 @@ import ContactForm from '../components/ContactForm.astro';
     
     <div class="grid grid-cols-1 gap-12 items-start mx-auto max-w-2xl bg-stone-950 rounded-lg p-8 font-logo">
       <div>
-        <p class="mb-6">We'd love to hear from you! Whether you're interested in one of our dogs or have questions about our breeding program, please don't hesitate to reach out.</p>
+        <p class="mb-6">{heading}</p>
         
         <div class="space-y-4">
           <div class="flex items-start">
@@ -22,7 +26,7 @@ import ContactForm from '../components/ContactForm.astro';
             </div>
             <div>
               <h3 class="font-semibold">Phone</h3>
-              <p>(555) 123-4567</p>
+              <p>{phone}</p>
             </div>
           </div>
           
@@ -34,7 +38,7 @@ import ContactForm from '../components/ContactForm.astro';
             </div>
             <div>
               <h3 class="font-semibold">Email</h3>
-              <p>info@dogbreedingcompany.com</p>
+              <p>{email}</p>
             </div>
           </div>
 

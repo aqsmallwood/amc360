@@ -39,8 +39,19 @@ const aboutCollection = defineCollection({
   }),
 });
 
+const contactCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    heading: z.string(),
+    date: z.date(),
+    phone: z.string(),
+    email: z.string(),
+  }),
+});
+
 export const collections = {
   'dogs': dogsCollection,
   'breedings': breedingsCollection,
   'about': aboutCollection,
+  'contact': contactCollection,
 }; 

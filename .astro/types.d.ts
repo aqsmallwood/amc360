@@ -192,6 +192,15 @@ declare module 'astro:content' {
   data: InferEntrySchema<"breedings">
 } & { render(): Render[".md"] };
 };
+"contact": {
+"contact.md": {
+	id: "contact.md";
+  slug: "contact";
+  body: string;
+  collection: "contact";
+  data: InferEntrySchema<"contact">
+} & { render(): Render[".md"] };
+};
 "dogs": {
 "females/reeses.md": {
 	id: "females/reeses.md";
