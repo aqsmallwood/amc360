@@ -1,34 +1,34 @@
 ---
-title: "Benny x Envy"
-father: "Benny"
-mother: "Envy"
-fatherImage: "/images/benny.jpg"
-motherImage: "/images/envy.jpg"
-firstMalePrice: 2500
-secondMalePrice: 2300
-thirdMalePrice: 2200
-firstFemalePrice: 2700
-secondFemalePrice: 2500
-thirdFemalePrice: 2400
-firstMaleSold: true
-secondMaleSold: true
-thirdMaleSold: false
-firstFemaleSold: true
-secondFemaleSold: false
-thirdFemaleSold: false
+mother: Envy
 items:
-  - title: "1st Male"
+  - title: 1st Male
     price: 2500
     sold: true
-  - title: "2nd Male"
+  - title: 2nd Male
     price: 2300
     sold: true
-  - title: "3rd Male"
+  - title: 3rd Male
     price: 2200
     sold: false
-  - title: "1st Female"
+  - title: 1st Female
     price: 2700
     sold: true
+thirdFemaleSold: false
+secondMalePrice: 2300
+thirdMaleSold: false
+secondFemalePrice: 2500
+firstMalePrice: 2500
+firstFemalePrice: 2700
+firstFemaleSold: true
+firstMaleSold: true
+secondFemaleSold: false
+secondMaleSold: true
+thirdMalePrice: 2200
+thirdFemalePrice: 2400
+title: Benny x Envy
+father: Benny
+fatherImage: /images/yohan-cho-rrvvraughle-unsplash.jpg
+motherImage: /images/sergio-arteaga-x72vrc7uj8i-unsplash.jpg
 ---
 
 # Max & Bella Spring 2023 Litter
