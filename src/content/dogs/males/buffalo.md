@@ -1,7 +1,7 @@
 ---
-name: "Buffalo Soldier"
-longAlias: "BUFFALO SOLDIER of 360 AMERICAN BULLY CLUB"
-image: "/images/buffalo.jpg"
+name: Buffalo Soldier
+longAlias: BUFFALO SOLDIER of 360 AMERICAN BULLY CLUB
+image: /images/recardo-davidson-dqepvwv8yes-unsplash.jpg
 weight: 70
 headSize: 25
 height: 14
