@@ -1,7 +1,7 @@
 ---
 name: Benny The Butcher
 longAlias: BENNY THE BUTCHER of 360 AMERICAN BULLY CLUB
-image: /images/benny.jpg
+image: /images/yohan-cho-rrvvraughle-unsplash.jpg
 weight: 47
 headSize: 20
 height: 12
