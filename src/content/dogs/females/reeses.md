@@ -1,7 +1,7 @@
 ---
 name: Reeses Cup
 longAlias: Reeses Cup of Dogtown Valley
-image: /images/magdaline-john-pk4eysv7c2a-unsplash.jpg
+image: /images/sergio-arteaga-x72vrc7uj8i-unsplash.jpg
 weight: 54
 headSize: 20
 height: 13
