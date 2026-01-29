@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
 import { getCollection } from 'astro:content';
 
 const aboutEntries = await getCollection('about');
-const latestAbout = aboutEntries.sort((a, b) => 
+const latestAbout = aboutEntries.sort((a, b) =>
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 )[0];
 
@@ -12,22 +13,107 @@ const { Content } = await latestAbout.render();
 ---
 
 <Layout title="Home">
-  <Hero 
-    title="360 American Bully Club" 
-    subtitle="Quality dogs for loving homes" 
-    image={latestAbout.data.image}
+  <Hero
+    title="360 American Bully Club"
+    subtitle="Where excellence meets temperament — Quality dogs for loving homes"
   />
-  
-  <section class="container mx-auto px-4 py-16">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center bg-stone-950 text-stone-50 rounded-lg p-4 font-play">About Us</h2>
-    
-    <div class="prose w-full text-center mx-auto dark:prose-invert
-      prose-h1:font-bold prose-h1:text-xl
-      prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
-      prose-headings:underline prose-div:text-center">
-      <Content />
-    </div>
+
+  <!-- About Section -->
+  <section class="py-32 px-8" style="background: linear-gradient(180deg, #0a0a0a 0%, #151515 100%);">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <!-- Image -->
+      <div class="relative">
+        <img
+          src={latestAbout.data.image}
+          alt="About 360 American Bully Club"
+          class="w-full aspect-[4/5] object-cover border border-[#8b7355]"
+          style="filter: grayscale(20%);"
+        />
+        <div class="absolute top-8 left-8 right-[-2rem] bottom-[-2rem] border border-[#c9a962] opacity-30 pointer-events-none"></div>
+      </div>
+
+      <!-- Content -->
+      <div>
+        <span class="inline-block text-[#c9a962] text-xs tracking-[0.3em] uppercase mb-4">Our Story</span>
+        <h3 class="font-['Bebas_Neue',sans-serif] text-5xl tracking-wide mb-6">
+          Breeding <span class="text-[#c9a962]">Excellence</span> Since 2010
+        </h3>
+        <div class="text-[#a0a0a0] leading-relaxed space-y-6 prose prose-invert prose-p:text-[#a0a0a0] prose-p:leading-relaxed max-w-none">
+          <Content />
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-[#1a1a1a]">
+          <div class="text-center">
+            <div class="font-['Bebas_Neue',sans-serif] text-5xl text-[#c9a962]">14+</div>
+            <div class="text-xs tracking-[0.15em] uppercase text-[#666666] mt-2">Years Experience</div>
+          </div>
+          <div class="text-center">
+            <div class="font-['Bebas_Neue',sans-serif] text-5xl text-[#c9a962]">100+</div>
+            <div class="text-xs tracking-[0.15em] uppercase text-[#666666] mt-2">Happy Families</div>
+          </div>
+          <div class="text-center">
+            <div class="font-['Bebas_Neue',sans-serif] text-5xl text-[#c9a962]">100%</div>
+            <div class="text-xs tracking-[0.15em] uppercase text-[#666666] mt-2">Health Tested</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-</Layout> 
+
+  <!-- Philosophy Section -->
+  <section class="py-32 px-8" style="background: #111111;">
+    <SectionHeader
+      label="What Sets Us Apart"
+      title="Our Philosophy"
+    />
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="philosophy-card p-12 border border-transparent transition-all duration-400 relative overflow-hidden hover:border-[#8b7355] hover:-translate-y-1" style="background: #111111;">
+        <div class="absolute top-0 left-0 right-0 h-0.5 transform scale-x-0 transition-transform duration-400 origin-left philosophy-line" style="background: linear-gradient(135deg, #c9a962 0%, #e8d5a3 50%, #c9a962 100%);"></div>
+        <svg class="w-16 h-16 mb-6 stroke-[#c9a962]" viewBox="0 0 60 60" fill="none" stroke-width="1.5">
+          <circle cx="30" cy="20" r="12" />
+          <path d="M10 50c0-11 9-20 20-20s20 9 20 20" />
+          <path d="M30 35v10M25 40h10" />
+        </svg>
+        <h4 class="font-['Bebas_Neue',sans-serif] text-2xl tracking-[0.1em] mb-4">Ethical Breeding</h4>
+        <p class="text-[#a0a0a0] text-sm leading-relaxed">
+          We prioritize the health and well-being of our dogs above all else. Comprehensive health testing ensures our breeding dogs are free from genetic disorders.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="philosophy-card p-12 border border-transparent transition-all duration-400 relative overflow-hidden hover:border-[#8b7355] hover:-translate-y-1" style="background: #111111;">
+        <div class="absolute top-0 left-0 right-0 h-0.5 transform scale-x-0 transition-transform duration-400 origin-left philosophy-line" style="background: linear-gradient(135deg, #c9a962 0%, #e8d5a3 50%, #c9a962 100%);"></div>
+        <svg class="w-16 h-16 mb-6 stroke-[#c9a962]" viewBox="0 0 60 60" fill="none" stroke-width="1.5">
+          <rect x="10" y="15" width="40" height="30" rx="3" />
+          <path d="M10 25h40" />
+          <circle cx="30" cy="35" r="5" />
+        </svg>
+        <h4 class="font-['Bebas_Neue',sans-serif] text-2xl tracking-[0.1em] mb-4">Premium Facilities</h4>
+        <p class="text-[#a0a0a0] text-sm leading-relaxed">
+          Our dogs are raised in a clean, spacious environment with daily exercise, socialization, and access to the highest quality care and nutrition.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="philosophy-card p-12 border border-transparent transition-all duration-400 relative overflow-hidden hover:border-[#8b7355] hover:-translate-y-1" style="background: #111111;">
+        <div class="absolute top-0 left-0 right-0 h-0.5 transform scale-x-0 transition-transform duration-400 origin-left philosophy-line" style="background: linear-gradient(135deg, #c9a962 0%, #e8d5a3 50%, #c9a962 100%);"></div>
+        <svg class="w-16 h-16 mb-6 stroke-[#c9a962]" viewBox="0 0 60 60" fill="none" stroke-width="1.5">
+          <path d="M30 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z" />
+        </svg>
+        <h4 class="font-['Bebas_Neue',sans-serif] text-2xl tracking-[0.1em] mb-4">Lifetime Support</h4>
+        <p class="text-[#a0a0a0] text-sm leading-relaxed">
+          When you purchase a puppy from us, you gain a lifelong partner in your journey. We provide ongoing advice and support as your puppy grows.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .philosophy-card:hover .philosophy-line {
+    transform: scaleX(1);
+  }
+</style>

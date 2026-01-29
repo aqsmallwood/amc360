@@ -1,0 +1,1659 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>360 American Bully Club | Premium American Bully Breeding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-deep: #0a0a0a;
+        --bg-card: #111111;
+        --bg-elevated: #1a1a1a;
+        --gold-primary: #c9a962;
+        --gold-light: #e8d5a3;
+        --gold-dark: #8b7355;
+        --text-primary: #f5f5f5;
+        --text-secondary: #a0a0a0;
+        --text-muted: #666666;
+        --accent-red: #8b2635;
+        --accent-green: #2d5a3d;
+        --gradient-gold: linear-gradient(
+          135deg,
+          #c9a962 0%,
+          #e8d5a3 50%,
+          #c9a962 100%
+        );
+        --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #151515 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg-deep);
+        color: var(--text-primary);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-deep);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--gold-dark);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--gold-primary);
+      }
+
+      /* Typography */
+      .display-font {
+        font-family: "Bebas Neue", sans-serif;
+        letter-spacing: 0.08em;
+      }
+
+      .elegant-font {
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 1.5rem 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 10, 10, 0.95) 0%,
+          rgba(10, 10, 10, 0) 100%
+        );
+        transition: all 0.4s ease;
+      }
+
+      nav.scrolled {
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 1rem 4rem;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.5rem;
+        color: var(--bg-deep);
+        font-weight: bold;
+      }
+
+      .logo-text {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.4rem;
+        color: var(--text-primary);
+        letter-spacing: 0.1em;
+      }
+
+      .logo-text span {
+        color: var(--gold-primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 3rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--gold-primary);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold-primary);
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-links a.active {
+        color: var(--gold-primary);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse at 20% 80%,
+            rgba(201, 169, 98, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 20%,
+            rgba(201, 169, 98, 0.05) 0%,
+            transparent 40%
+          ),
+          var(--bg-deep);
+      }
+
+      .hero-pattern {
+        position: absolute;
+        inset: 0;
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a962' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      .hero-content {
+        position: relative;
+        text-align: center;
+        max-width: 900px;
+        padding: 2rem;
+        animation: fadeInUp 1.2s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-badge {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        border: 1px solid var(--gold-dark);
+        color: var(--gold-primary);
+        font-size: 0.75rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1.2s ease-out 0.2s backwards;
+      }
+
+      .hero h1 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(4rem, 12vw, 10rem);
+        letter-spacing: 0.05em;
+        line-height: 0.9;
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 1.2s ease-out 0.4s backwards;
+      }
+
+      .hero h1 span {
+        display: block;
+        background: var(--gradient-gold);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
+        animation: fadeInUp 1.2s ease-out 0.6s backwards;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeInUp 1.2s ease-out 0.8s backwards;
+      }
+
+      .btn {
+        padding: 1rem 2.5rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: var(--gradient-gold);
+        color: var(--bg-deep);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 40px rgba(201, 169, 98, 0.3);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--text-primary);
+        border: 1px solid var(--text-muted);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--gold-primary);
+        color: var(--gold-primary);
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-muted);
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(10px);
+        }
+      }
+
+      .scroll-indicator svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--gold-primary);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 8rem 4rem;
+        position: relative;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+
+      .section-label {
+        display: inline-block;
+        color: var(--gold-primary);
+        font-size: 0.75rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(3rem, 6vw, 5rem);
+        letter-spacing: 0.05em;
+      }
+
+      .section-subtitle {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 1.5rem auto 0;
+        font-style: italic;
+      }
+
+      /* About Section */
+      .about {
+        background: var(--gradient-dark);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .about-image {
+        position: relative;
+      }
+
+      .about-image-main {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        filter: grayscale(20%);
+        border: 1px solid var(--gold-dark);
+      }
+
+      .about-image-frame {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        right: -2rem;
+        bottom: -2rem;
+        border: 1px solid var(--gold-primary);
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .about-content h3 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 3.5rem;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-content h3 span {
+        color: var(--gold-primary);
+      }
+
+      .about-text {
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+      }
+
+      .about-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid var(--bg-elevated);
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 3rem;
+        color: var(--gold-primary);
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-top: 0.5rem;
+      }
+
+      /* Philosophy Cards */
+      .philosophy-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .philosophy-card {
+        background: var(--bg-card);
+        padding: 3rem 2rem;
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+
+      .philosophy-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--gradient-gold);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+      }
+
+      .philosophy-card:hover {
+        border-color: var(--gold-dark);
+        transform: translateY(-5px);
+      }
+
+      .philosophy-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .philosophy-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.5rem;
+        stroke: var(--gold-primary);
+        stroke-width: 1.5;
+        fill: none;
+      }
+
+      .philosophy-card h4 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+      }
+
+      .philosophy-card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      /* Dogs Grid Section */
+      .dogs-section {
+        background: var(--bg-deep);
+      }
+
+      .dogs-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 4rem;
+      }
+
+      .tab-btn {
+        padding: 1rem 2.5rem;
+        background: transparent;
+        border: 1px solid var(--text-muted);
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .tab-btn.active,
+      .tab-btn:hover {
+        border-color: var(--gold-primary);
+        color: var(--gold-primary);
+        background: rgba(201, 169, 98, 0.1);
+      }
+
+      .dogs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .dog-card {
+        background: var(--bg-card);
+        border: 1px solid var(--bg-elevated);
+        overflow: hidden;
+        transition: all 0.4s ease;
+        position: relative;
+      }
+
+      .dog-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--gold-dark);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      }
+
+      .dog-image-container {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+      }
+
+      .dog-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .dog-card:hover .dog-image {
+        transform: scale(1.05);
+      }
+
+      .dog-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--gradient-gold);
+        color: var(--bg-deep);
+        padding: 0.3rem 0.8rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .dog-info {
+        padding: 2rem;
+      }
+
+      .dog-name {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.8rem;
+        letter-spacing: 0.05em;
+        color: var(--gold-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .dog-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1rem;
+        color: var(--text-muted);
+        font-style: italic;
+        margin-bottom: 1.5rem;
+      }
+
+      .dog-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--bg-elevated);
+      }
+
+      .dog-stat {
+        text-align: center;
+      }
+
+      .dog-stat-value {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.5rem;
+        color: var(--text-primary);
+      }
+
+      .dog-stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      .dog-description {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-top: 1.5rem;
+      }
+
+      /* Tab Content */
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Breedings Section */
+      .breedings-section {
+        background: linear-gradient(180deg, var(--bg-deep) 0%, #0f0f0f 100%);
+      }
+
+      .breeding-card {
+        background: var(--bg-card);
+        border: 1px solid var(--bg-elevated);
+        max-width: 1000px;
+        margin: 0 auto 3rem;
+        overflow: hidden;
+      }
+
+      .breeding-header {
+        background: linear-gradient(
+          90deg,
+          var(--gold-dark) 0%,
+          var(--gold-primary) 50%,
+          var(--gold-dark) 100%
+        );
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .breeding-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+        color: var(--bg-deep);
+      }
+
+      .breeding-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+
+      .breeding-parent {
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .breeding-parent:first-child {
+        border-right: 1px solid var(--bg-elevated);
+      }
+
+      .breeding-parent-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+      }
+
+      .breeding-parent-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 2px solid var(--gold-dark);
+        margin-bottom: 1rem;
+      }
+
+      .breeding-parent-name {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.05em;
+        color: var(--gold-primary);
+      }
+
+      .breeding-puppies {
+        padding: 2rem;
+        background: var(--bg-elevated);
+      }
+
+      .puppies-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: 0.1em;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .puppies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .puppy-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: var(--bg-card);
+        border: 1px solid var(--bg-elevated);
+      }
+
+      .puppy-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+
+      .puppy-status {
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      .status-sold {
+        color: var(--accent-red);
+      }
+
+      .status-available {
+        color: var(--accent-green);
+      }
+
+      .status-price {
+        color: var(--gold-primary);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: var(--bg-deep);
+        position: relative;
+      }
+
+      .contact-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          ellipse at 80% 80%,
+          rgba(201, 169, 98, 0.05) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .contact-info h3 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.5rem;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-info p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--bg-card);
+        border: 1px solid var(--gold-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .contact-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--gold-primary);
+      }
+
+      .contact-item-content {
+        flex: 1;
+      }
+
+      .contact-item-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      .contact-item-value {
+        color: var(--text-primary);
+        font-size: 1.1rem;
+      }
+
+      .contact-form {
+        background: var(--bg-card);
+        padding: 3rem;
+        border: 1px solid var(--bg-elevated);
+      }
+
+      .form-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.8rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .form-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      .form-input,
+      .form-select,
+      .form-textarea {
+        padding: 1rem;
+        background: var(--bg-deep);
+        border: 1px solid var(--bg-elevated);
+        color: var(--text-primary);
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-input:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        outline: none;
+        border-color: var(--gold-primary);
+      }
+
+      .form-textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .form-select {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6,9 12,15 18,9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 16px;
+      }
+
+      .form-submit {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+      }
+
+      .form-submit .btn {
+        width: 100%;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--bg-card);
+        border-top: 1px solid var(--bg-elevated);
+        padding: 4rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .footer-text {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .footer-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--gold-primary);
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        nav {
+          padding: 1rem 2rem;
+        }
+
+        section {
+          padding: 5rem 2rem;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .philosophy-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .breeding-content {
+          grid-template-columns: 1fr;
+        }
+
+        .breeding-parent:first-child {
+          border-right: none;
+          border-bottom: 1px solid var(--bg-elevated);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 3.5rem;
+        }
+
+        .dogs-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .form-group.full-width {
+          grid-column: 1;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .about-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .mobile-menu-btn span {
+        width: 25px;
+        height: 2px;
+        background: var(--text-primary);
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: flex;
+        }
+      }
+
+      /* Placeholder images - will use gradients */
+      .placeholder-img {
+        background: linear-gradient(
+          135deg,
+          var(--bg-elevated) 0%,
+          var(--bg-card) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <a href="#home" class="logo">
+        <div class="logo-icon">360</div>
+        <div class="logo-text"><span>360</span> American Bully Club</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#dogs">Our Dogs</a></li>
+        <li><a href="#breedings">Breedings</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-pattern"></div>
+      <div class="hero-content">
+        <div class="hero-badge">Est. 2010 • Premium Breeding</div>
+        <h1>
+          360 AMERICAN
+          <span>BULLY CLUB</span>
+        </h1>
+        <p class="hero-tagline">
+          Where excellence meets temperament — Quality dogs for loving homes
+        </p>
+        <div class="hero-cta">
+          <a href="#dogs" class="btn btn-primary">View Our Dogs</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="about-grid">
+        <div class="about-image">
+          <div
+            class="about-image-main placeholder-img"
+            style="width: 100%; aspect-ratio: 4/5"
+          >
+            <span>Premium Facility Image</span>
+          </div>
+          <div class="about-image-frame"></div>
+        </div>
+        <div class="about-content">
+          <span class="section-label">Our Story</span>
+          <h3>Breeding <span>Excellence</span> Since 2010</h3>
+          <p class="about-text">
+            Founded in 2010, 360 American Bully Club has been dedicated to
+            raising healthy, well-tempered dogs with excellent pedigrees. We
+            specialize in breeding dogs that make wonderful family companions
+            and exceptional show dogs.
+          </p>
+          <p class="about-text">
+            We believe in ethical breeding practices that prioritize the health
+            and well-being of our dogs. All of our breeding dogs undergo
+            comprehensive health testing to ensure they are free from genetic
+            disorders common to their breed.
+          </p>
+          <p class="about-text">
+            Our dogs are raised in a clean, spacious environment where they
+            receive daily exercise, socialization, and plenty of love and
+            attention. We take pride in providing our dogs with the highest
+            quality care, nutrition, and veterinary services.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-number">14+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Happy Families</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Health Tested</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section style="background: var(--bg-card)">
+      <div class="section-header">
+        <span class="section-label">What Sets Us Apart</span>
+        <h2 class="section-title">Our Philosophy</h2>
+      </div>
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <svg class="philosophy-icon" viewBox="0 0 60 60">
+            <circle cx="30" cy="20" r="12" />
+            <path d="M10 50c0-11 9-20 20-20s20 9 20 20" />
+            <path d="M30 35v10M25 40h10" />
+          </svg>
+          <h4>Ethical Breeding</h4>
+          <p>
+            We prioritize the health and well-being of our dogs above all else.
+            Comprehensive health testing ensures our breeding dogs are free from
+            genetic disorders.
+          </p>
+        </div>
+        <div class="philosophy-card">
+          <svg class="philosophy-icon" viewBox="0 0 60 60">
+            <rect x="10" y="15" width="40" height="30" rx="3" />
+            <path d="M10 25h40" />
+            <circle cx="30" cy="35" r="5" />
+          </svg>
+          <h4>Premium Facilities</h4>
+          <p>
+            Our dogs are raised in a clean, spacious environment with daily
+            exercise, socialization, and access to the highest quality care and
+            nutrition.
+          </p>
+        </div>
+        <div class="philosophy-card">
+          <svg class="philosophy-icon" viewBox="0 0 60 60">
+            <path d="M30 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z" />
+          </svg>
+          <h4>Lifetime Support</h4>
+          <p>
+            When you purchase a puppy from us, you gain a lifelong partner in
+            your journey. We provide ongoing advice and support as your puppy
+            grows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dogs Section -->
+    <section class="dogs-section" id="dogs">
+      <div class="section-header">
+        <span class="section-label">Meet the Pack</span>
+        <h2 class="section-title">Our Dogs</h2>
+        <p class="section-subtitle">
+          Exceptional bloodlines, outstanding temperament, and remarkable
+          structure
+        </p>
+      </div>
+
+      <div class="dogs-tabs">
+        <button class="tab-btn active" data-tab="males">Males</button>
+        <button class="tab-btn" data-tab="females">Females</button>
+      </div>
+
+      <!-- Males Tab -->
+      <div class="tab-content active" id="males">
+        <div class="dogs-grid">
+          <div class="dog-card">
+            <div class="dog-image-container">
+              <div class="dog-image placeholder-img">Buffalo Soldier</div>
+              <div class="dog-badge">Stud</div>
+            </div>
+            <div class="dog-info">
+              <h3 class="dog-name">Buffalo Soldier</h3>
+              <p class="dog-title">of 360 American Bully Club</p>
+              <div class="dog-stats">
+                <div class="dog-stat">
+                  <div class="dog-stat-value">70</div>
+                  <div class="dog-stat-label">Weight (lbs)</div>
+                </div>
+                <div class="dog-stat">
+                  <div class="dog-stat-value">25"</div>
+                  <div class="dog-stat-label">Head</div>
+                </div>
+                <div class="dog-stat">
+                  <div class="dog-stat-value">14"</div>
+                  <div class="dog-stat-label">Height</div>
+                </div>
+              </div>
+              <p class="dog-description">
+                Buffalo Soldier is a buff bully with a short compact body. His
+                compact figure goes well with his 25" head and more bone and
+                girth than other dogs his size. Buffalo is the future here at
+                360 American Bully Camp.
+              </p>
+            </div>
+          </div>
+
+          <div class="dog-card">
+            <div class="dog-image-container">
+              <div class="dog-image placeholder-img">Benny The Butcher</div>
+              <div class="dog-badge">Growing</div>
+            </div>
+            <div class="dog-info">
+              <h3 class="dog-name">Benny The Butcher</h3>
+              <p class="dog-title">of 360 American Bully Club</p>
+              <div class="dog-stats">
+                <div class="dog-stat">
+                  <div class="dog-stat-value">47</div>
+                  <div class="dog-stat-label">Weight (lbs)</div>
+                </div>
+                <div class="dog-stat">
+                  <div class="dog-stat-value">20"</div>
+                  <div class="dog-stat-label">Head</div>
+                </div>
+                <div class="dog-stat">
+                  <div class="dog-stat-value">12"</div>
+                  <div class="dog-stat-label">Height</div>
+                </div>
+              </div>
+              <p class="dog-description">
+                The Butcher is coming. Still growing and developing, Benny
+                promises to be an exceptional addition to our breeding program.
+              </p>
+            </div>
+          </div>
+
+          <div class="dog-card">
+            <div class="dog-image-container">
+              <div class="dog-image placeholder-img">Pretty Tony</div>
+              <div class="dog-badge">Stud</div>
+            </div>
+            <div class="dog-info">
+              <h3 class="dog-name">Pretty Tony</h3>
+              <p class="dog-title">of 360 American Bully Club</p>
+              <div class="dog-stats">
+                <div class="dog-stat">
+                  <div class="dog-stat-value">—</div>
+                  <div class="dog-stat-label">Weight</div>
+                </div>
+                <div class="dog-stat">
+                  <div class="dog-stat-value">—</div>
+                  <div class="dog-stat-label">Head</div>
+                </div>
+                <div class="dog-stat">
+                  <div class="dog-stat-value">—</div>
+                  <div class="dog-stat-label">Height</div>
+                </div>
+              </div>
+              <p class="dog-description">
+                As pretty as can be... Pretty Tony brings exceptional coloring
+                and structure to our program.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Females Tab -->
+      <div class="tab-content" id="females">
+        <div class="dogs-grid">
+          <div class="dog-card">
+            <div class="dog-image-container">
+              <div class="dog-image placeholder-img">Reeses Cup</div>
+              <div class="dog-badge">Dam</div>
+            </div>
+            <div class="dog-info">
+              <h3 class="dog-name">Reeses Cup</h3>
+              <p class="dog-title">of Dogtown Valley</p>
+              <div class="dog-stats">
+                <div class="dog-stat">
+                  <div class="dog-stat-value">54</div>
+                  <div class="dog-stat-label">Weight (lbs)</div>
+                </div>
+                <div class="dog-stat">
+                  <div class="dog-stat-value">20"</div>
+                  <div class="dog-stat-label">Head</div>
+                </div>
+                <div class="dog-stat">
+                  <div class="dog-stat-value">13"</div>
+                  <div class="dog-stat-label">Height</div>
+                </div>
+              </div>
+              <p class="dog-description">
+                Reeses Cup is our latest up incoming female with a couple of
+                breeding under her belt. She has produced some amazing pups.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breedings Section -->
+    <section class="breedings-section" id="breedings">
+      <div class="section-header">
+        <span class="section-label">Current Litters</span>
+        <h2 class="section-title">Breedings</h2>
+        <p class="section-subtitle">
+          Carefully planned pairings for exceptional offspring
+        </p>
+      </div>
+
+      <div class="breeding-card">
+        <div class="breeding-header">
+          <h3 class="breeding-title">Benny × Envy</h3>
+        </div>
+        <div class="breeding-content">
+          <div class="breeding-parent">
+            <div class="breeding-parent-label">Father</div>
+            <div class="breeding-parent-image placeholder-img">Benny</div>
+            <div class="breeding-parent-name">Benny</div>
+          </div>
+          <div class="breeding-parent">
+            <div class="breeding-parent-label">Mother</div>
+            <div class="breeding-parent-image placeholder-img">Envy</div>
+            <div class="breeding-parent-name">Envy</div>
+          </div>
+        </div>
+        <div class="breeding-puppies">
+          <h4 class="puppies-title">Available Puppies</h4>
+          <div class="puppies-grid">
+            <div class="puppy-item">
+              <span class="puppy-label">1st Male</span>
+              <span class="puppy-status status-sold">SOLD</span>
+            </div>
+            <div class="puppy-item">
+              <span class="puppy-label">2nd Male</span>
+              <span class="puppy-status status-sold">SOLD</span>
+            </div>
+            <div class="puppy-item">
+              <span class="puppy-label">3rd Male</span>
+              <span class="puppy-status status-price">$2,200</span>
+            </div>
+            <div class="puppy-item">
+              <span class="puppy-label">1st Female</span>
+              <span class="puppy-status status-sold">SOLD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="section-header">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>
+            We'd love to hear from you! Whether you're interested in one of our
+            dogs or have questions about our breeding program, please don't
+            hesitate to reach out.
+          </p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+                  />
+                </svg>
+              </div>
+              <div class="contact-item-content">
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value">(702) 123-4568</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div class="contact-item-content">
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">info@360americanbully.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h4 class="form-title">Send a Message</h4>
+          <form class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-input" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-input"
+                placeholder="your@email.com"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone</label>
+              <input
+                type="tel"
+                class="form-input"
+                placeholder="(555) 123-4567"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">I'm Interested In</label>
+              <select class="form-select">
+                <option>Male Dog</option>
+                <option>Female Dog</option>
+                <option>Puppy</option>
+                <option>Stud Service</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label">Message</label>
+              <textarea
+                class="form-textarea"
+                placeholder="Tell us about what you're looking for..."
+              ></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo-icon">360</div>
+          <div>
+            <div class="logo-text"><span>360</span> American Bully Club</div>
+            <p class="footer-text">Quality dogs for loving homes since 2010</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#dogs">Dogs</a>
+          <a href="#breedings">Breedings</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <p class="footer-text">
+          © 2025 360 American Bully Club. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Navbar scroll effect
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Tab functionality
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tabId = btn.dataset.tab;
+
+          // Update buttons
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          // Update content
+          tabContents.forEach((content) => {
+            content.classList.remove("active");
+            if (content.id === tabId) {
+              content.classList.add("active");
+            }
+          });
+        });
+      });
+
+      // Smooth scroll for nav links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Active nav link on scroll
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-links a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Form submission
+      document
+        .querySelector(".contact-form form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Thank you for your message! We will get back to you soon.");
+        });
+    </script>
+  </body>
+</html>

@@ -12,30 +12,61 @@ interface Props {
   }[];
 }
 
-const { title, fatherImage, fatherName, motherImage, motherName, prices, sold, items } = Astro.props;
+const { title, fatherImage, fatherName, motherImage, motherName, items } = Astro.props;
 ---
-<div class="bg-stone-950 overflow-hidden rounded-lg p-8">
-  <div>
-    <h3 class="text-3xl text-center font-bold mb-4 font-wild text-amber-500">{title}</h3>
-    
-    <div class="grid grid-cols-2 gap-6 mb-6 font-logo">
-      <div>
-        <h4 class="text-lg font-semibold mb-2">Father: {fatherName}</h4>
-        <img src={fatherImage} alt={fatherName} class="w-full object-cover rounded" />
-      </div>
-      <div>
-        <h4 class="text-lg font-semibold mb-2">Mother: {motherName}</h4>
-        <img src={motherImage} alt={motherName} class="w-full object-cover rounded" />
+
+<div class="breeding-card border border-[#1a1a1a] max-w-4xl mx-auto overflow-hidden" style="background: #111111;">
+  <!-- Header -->
+  <div class="py-6 text-center" style="background: linear-gradient(90deg, #8b7355 0%, #c9a962 50%, #8b7355 100%);">
+    <h3 class="font-['Bebas_Neue',sans-serif] text-4xl tracking-[0.1em]" style="color: #0a0a0a;">
+      {title}
+    </h3>
+  </div>
+
+  <!-- Parents -->
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <!-- Father -->
+    <div class="p-8 text-center md:border-r border-[#1a1a1a]">
+      <div class="text-xs tracking-[0.2em] uppercase text-[#666666] mb-4">Father</div>
+      <img
+        src={fatherImage}
+        alt={fatherName}
+        class="w-48 h-48 object-cover border-2 border-[#8b7355] mx-auto mb-4"
+      />
+      <div class="font-['Bebas_Neue',sans-serif] text-2xl tracking-wide text-[#c9a962]">
+        {fatherName}
       </div>
     </div>
-    
-    <div class="grid grid-cols-2 gap-4 mb-4 font-logo">
-      {items.map((item, index) => (
-        <div class="flex justify-between text-xl">
-          <span>{item.title}:</span> 
-          <span class={`font-bold ${item.sold ? 'text-red-500' : 'text-green-500'}`}>{item.sold ? 'SOLD' : `$${item.price}`}</span>
+
+    <!-- Mother -->
+    <div class="p-8 text-center border-t md:border-t-0 border-[#1a1a1a]">
+      <div class="text-xs tracking-[0.2em] uppercase text-[#666666] mb-4">Mother</div>
+      <img
+        src={motherImage}
+        alt={motherName}
+        class="w-48 h-48 object-cover border-2 border-[#8b7355] mx-auto mb-4"
+      />
+      <div class="font-['Bebas_Neue',sans-serif] text-2xl tracking-wide text-[#c9a962]">
+        {motherName}
+      </div>
+    </div>
+  </div>
+
+  <!-- Puppies -->
+  <div class="p-8" style="background: #1a1a1a;">
+    <h4 class="font-['Bebas_Neue',sans-serif] text-xl tracking-[0.1em] text-center mb-6">
+      Available Puppies
+    </h4>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {items.map((item) => (
+        <div class="flex justify-between items-center p-4 border border-[#1a1a1a]" style="background: #111111;">
+          <span class="text-[#a0a0a0]">{item.title}</span>
+          <span class={`font-bold tracking-[0.1em] ${item.sold ? 'text-[#8b2635]' : 'text-[#c9a962]'}`}>
+            {item.sold ? 'SOLD' : `$${item.price.toLocaleString()}`}
+          </span>
         </div>
       ))}
     </div>
   </div>
-</div> 
+</div>

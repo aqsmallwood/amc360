@@ -59,16 +59,20 @@ collections:
       - { label: "Mother", name: "mother", widget: "relation", collection: "females", search_fields: ["name"], value_field: "{{slug}}", display_fields: ["name"] }
       - { label: "Father Image", name: "fatherImage", widget: "image" }
       - { label: "Mother Image", name: "motherImage", widget: "image" }
-      - { label: "1st Male Price", name: "firstMalePrice", widget: "number" }
-      - { label: "2nd Male Price", name: "secondMalePrice", widget: "number" }
-      - { label: "3rd Male Price", name: "thirdMalePrice", widget: "number" }
-      - { label: "1st Female Price", name: "firstFemalePrice", widget: "number" }
-      - { label: "2nd Female Price", name: "secondFemalePrice", widget: "number" }
-      - { label: "3rd Female Price", name: "thirdFemalePrice", widget: "number" }
-      - { label: "1st Male Sold", name: "firstMaleSold", widget: "boolean", default: false }
-      - { label: "2nd Male Sold", name: "secondMaleSold", widget: "boolean", default: false }
-      - { label: "3rd Male Sold", name: "thirdMaleSold", widget: "boolean", default: false }
-      - { label: "1st Female Sold", name: "firstFemaleSold", widget: "boolean", default: false }
-      - { label: "2nd Female Sold", name: "secondFemaleSold", widget: "boolean", default: false }
-      - { label: "3rd Female Sold", name: "thirdFemaleSold", widget: "boolean", default: false }
+      - { label: "Items", name: "items", widget: "list", fields: [
+        { label: "Title", name: "title", widget: "string" },
+        { label: "Price", name: "price", widget: "number" },
+        { label: "Sold", name: "sold", widget: "boolean", default: false }
+      ]}
       - { label: "Description", name: "body", widget: "markdown" }
+
+  - name: "contact"
+    label: "Contact"
+    folder: "src/content/contact"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Heading", name: "heading", widget: "markdown" } 
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Phone", name: "phone", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }

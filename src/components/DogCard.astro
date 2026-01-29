@@ -8,40 +8,79 @@ interface Props {
   height: number;
   stillGrowing: boolean;
   url: string;
-  body: string;
+  body: any;
 }
 
 const { name, longAlias, image, weight, headSize, height, stillGrowing, url, body } = Astro.props;
 const { Content } = await body.render();
 ---
-<div class="bg-stone-950 overflow-hidden rounded-lg p-8 font-logo">
-  <div>
-    <h3 class="text-3xl text-center font-bold mb-4 font-wild text-amber-500">{longAlias}</h3>
-    <img src={image} alt={name} class="w-full object-cover" />
-    <div class="grid grid-cols-1 gap-2 my-4 place-items-center text-2xl font-light">
-    {weight !== -1 && (
-      <div class="flex items-center">
-        <span class="mr-2">WEIGHT:</span> {weight} lbs
+
+<div class="dog-card border border-[#1a1a1a] overflow-hidden transition-all duration-400 relative hover:-translate-y-2 hover:border-[#8b7355] hover:shadow-2xl" style="background: #111111;">
+  <!-- Image Container -->
+  <div class="relative overflow-hidden aspect-[4/3]">
+    <img
+      src={image}
+      alt={name}
+      class="w-full h-full object-cover transition-transform duration-600 hover:scale-105"
+    />
+    <!-- Badge -->
+    {stillGrowing ? (
+      <div class="absolute top-4 right-4 px-3 py-1 text-xs tracking-[0.1em] uppercase font-bold" style="background: linear-gradient(135deg, #c9a962 0%, #e8d5a3 50%, #c9a962 100%); color: #0a0a0a;">
+        Growing
+      </div>
+    ) : (
+      <div class="absolute top-4 right-4 px-3 py-1 text-xs tracking-[0.1em] uppercase font-bold" style="background: linear-gradient(135deg, #c9a962 0%, #e8d5a3 50%, #c9a962 100%); color: #0a0a0a;">
+        Stud
       </div>
     )}
-    {headSize !== -1 && (
-      <div class="flex items-center">
-        <span class="mr-2">HEAD:</span> {headSize}"
-      </div>
-    )}
-    {height !== -1 && (
-      <div class="flex items-center">
-        <span class="mr-2">HEIGHT:</span> {height}"
-      </div>
-    )}
-      {stillGrowing && (
-        <div class="flex items-center">
-          <span class="mr-2">Still Growing</span>
-        </div>
-      )}
-    </div>
-    <p class="text-center text-2xl font-light">
-      <Content />
-    </p>
   </div>
-</div> 
+
+  <!-- Info -->
+  <div class="p-8">
+    <h3 class="font-['Bebas_Neue',sans-serif] text-3xl tracking-wide text-[#c9a962] mb-1">
+      {longAlias}
+    </h3>
+    <p class="font-['Cormorant_Garamond',serif] text-base text-[#666666] italic mb-6">
+      of 360 American Bully Club
+    </p>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-[#1a1a1a]">
+      <div class="text-center">
+        <div class="font-['Bebas_Neue',sans-serif] text-2xl text-[#f5f5f5]">
+          {weight !== -1 ? weight : '—'}
+        </div>
+        <div class="text-[10px] tracking-[0.15em] uppercase text-[#666666]">
+          Weight (lbs)
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="font-['Bebas_Neue',sans-serif] text-2xl text-[#f5f5f5]">
+          {headSize !== -1 ? `${headSize}"` : '—'}
+        </div>
+        <div class="text-[10px] tracking-[0.15em] uppercase text-[#666666]">
+          Head
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="font-['Bebas_Neue',sans-serif] text-2xl text-[#f5f5f5]">
+          {height !== -1 ? `${height}"` : '—'}
+        </div>
+        <div class="text-[10px] tracking-[0.15em] uppercase text-[#666666]">
+          Height
+        </div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="text-[#a0a0a0] text-sm leading-relaxed mt-6">
+      <Content />
+    </div>
+  </div>
+</div>
+
+<style>
+  .dog-card:hover img {
+    transform: scale(1.05);
+  }
+</style>

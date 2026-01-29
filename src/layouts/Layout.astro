@@ -18,9 +18,19 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | 360 American Bully Club</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body class="min-h-screen flex flex-col bg-neutral-700 text-white">
+  <body class="min-h-screen flex flex-col font-['DM_Sans',sans-serif]">
     <Header />
     <main class="flex-grow">
       <slot />
@@ -38,4 +48,4 @@ const { title } = Astro.props;
       }
     </script>
   </body>
-</html> 
+</html>

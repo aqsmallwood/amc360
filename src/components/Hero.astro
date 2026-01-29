@@ -2,22 +2,128 @@
 interface Props {
   title: string;
   subtitle?: string;
-  image: string;
+  badge?: string;
+  showCta?: boolean;
 }
 
-const { title, subtitle, image } = Astro.props;
+const { title, subtitle, badge = "Est. 2010 • Premium Breeding", showCta = true } = Astro.props;
 ---
-<div class="relative h-[70vh] flex items-center justify-center">
-  <div class="absolute inset-0 z-0">
-    <img 
-      src={image} 
-      alt={title} 
-      class="w-full h-full object-cover"
-    />
-    <div class="absolute inset-0 bg-black opacity-40"></div>
+
+<section class="hero min-h-screen relative flex items-center justify-center overflow-hidden">
+  <!-- Background -->
+  <div class="hero-bg absolute inset-0"></div>
+
+  <!-- Pattern overlay -->
+  <div class="hero-pattern absolute inset-0"></div>
+
+  <!-- Content -->
+  <div class="hero-content relative text-center max-w-4xl px-8">
+    <!-- Badge -->
+    <div class="hero-badge inline-block px-6 py-2 border border-[#8b7355] text-[#c9a962] text-xs tracking-[0.3em] uppercase mb-8">
+      {badge}
+    </div>
+
+    <!-- Title -->
+    <h1 class="font-['Bebas_Neue',sans-serif] text-6xl md:text-8xl lg:text-9xl tracking-wide leading-none mb-6">
+      360 AMERICAN
+      <span class="block hero-gradient-text">
+        BULLY CLUB
+      </span>
+    </h1>
+
+    <!-- Tagline -->
+    <p class="hero-tagline font-['Cormorant_Garamond',serif] text-xl md:text-2xl italic text-[#a0a0a0] mb-12">
+      {subtitle || "Where excellence meets temperament — Quality dogs for loving homes"}
+    </p>
+
+    <!-- CTAs -->
+    {showCta && (
+      <div class="hero-cta flex gap-6 justify-center flex-wrap">
+        <a href="/males" class="btn btn-primary">View Our Dogs</a>
+        <a href="/contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    )}
   </div>
-  <div class="relative z-10 text-center text-white px-4">
-    <h1 class="text-5xl font-bold mb-4">{title}</h1>
-    {subtitle && <p class="text-xl max-w-2xl mx-auto">{subtitle}</p>}
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator absolute bottom-12 left-1/2 flex flex-col items-center gap-2 text-[#666666] text-xs tracking-[0.2em] uppercase">
+    <span>Scroll</span>
+    <svg class="w-6 h-6 stroke-[#c9a962]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 5v14M5 12l7 7 7-7" />
+    </svg>
   </div>
-</div> 
+</section>
+
+<style>
+  .hero-bg {
+    background:
+      radial-gradient(
+        ellipse at 20% 80%,
+        rgba(201, 169, 98, 0.08) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 80% 20%,
+        rgba(201, 169, 98, 0.05) 0%,
+        transparent 40%
+      ),
+      #0a0a0a;
+  }
+
+  .hero-pattern {
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a962' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-content {
+    animation: fadeInUp 1.2s ease-out;
+  }
+
+  .hero-badge {
+    animation: fadeInUp 1.2s ease-out 0.2s backwards;
+  }
+
+  .hero h1 {
+    animation: fadeInUp 1.2s ease-out 0.4s backwards;
+  }
+
+  .hero-tagline {
+    animation: fadeInUp 1.2s ease-out 0.6s backwards;
+  }
+
+  .hero-cta {
+    animation: fadeInUp 1.2s ease-out 0.8s backwards;
+  }
+
+  .hero-gradient-text {
+    background: linear-gradient(135deg, #c9a962 0%, #e8d5a3 50%, #c9a962 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .scroll-indicator {
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(10px);
+    }
+  }
+</style>

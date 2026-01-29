@@ -1,14 +1,114 @@
-<header class="bg-stone-950 text-white p-4">
-  <div class="container mx-auto flex flex-col gap-2 md:flex-row justify-between items-center">
-    <div class="text-lg font-logo">360 AMERICAN BULLY CLUB</div>
-    <nav>
-      <ul class="flex space-x-6 font-nav">
-        <li><a href="/" class="hover:text-blue-300">Home</a></li>
-        <li><a href="/males" class="hover:text-blue-300">Males</a></li>
-        <li><a href="/females" class="hover:text-blue-300">Females</a></li>
-        <li><a href="/breedings" class="hover:text-blue-300">Breedings</a></li>
-        <li><a href="/contact" class="hover:text-blue-300">Contact</a></li>
-      </ul>
-    </nav>
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex justify-between items-center transition-all duration-400" style="background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0) 100%);">
+    <a href="/" class="flex items-center gap-4 no-underline">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center font-['Bebas_Neue',sans-serif] text-2xl font-bold" style="background: linear-gradient(135deg, #c9a962 0%, #e8d5a3 50%, #c9a962 100%); color: #0a0a0a;">
+        360
+      </div>
+      <div class="font-['Bebas_Neue',sans-serif] text-lg tracking-widest text-[#f5f5f5]">
+        <span class="text-[#c9a962]">360</span> American Bully Club
+      </div>
+    </a>
+
+    <ul class="hidden md:flex gap-12 list-none">
+      <li>
+        <a href="/" class={`text-sm tracking-[0.15em] uppercase font-medium relative transition-colors duration-300 no-underline nav-link ${currentPath === '/' ? 'text-[#c9a962] active' : 'text-[#a0a0a0] hover:text-[#c9a962]'}`}>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="/males" class={`text-sm tracking-[0.15em] uppercase font-medium relative transition-colors duration-300 no-underline nav-link ${currentPath === '/males' || currentPath.startsWith('/males/') ? 'text-[#c9a962] active' : 'text-[#a0a0a0] hover:text-[#c9a962]'}`}>
+          Males
+        </a>
+      </li>
+      <li>
+        <a href="/females" class={`text-sm tracking-[0.15em] uppercase font-medium relative transition-colors duration-300 no-underline nav-link ${currentPath === '/females' || currentPath.startsWith('/females/') ? 'text-[#c9a962] active' : 'text-[#a0a0a0] hover:text-[#c9a962]'}`}>
+          Females
+        </a>
+      </li>
+      <li>
+        <a href="/breedings" class={`text-sm tracking-[0.15em] uppercase font-medium relative transition-colors duration-300 no-underline nav-link ${currentPath === '/breedings' || currentPath.startsWith('/breedings/') ? 'text-[#c9a962] active' : 'text-[#a0a0a0] hover:text-[#c9a962]'}`}>
+          Breedings
+        </a>
+      </li>
+      <li>
+        <a href="/contact" class={`text-sm tracking-[0.15em] uppercase font-medium relative transition-colors duration-300 no-underline nav-link ${currentPath === '/contact' ? 'text-[#c9a962] active' : 'text-[#a0a0a0] hover:text-[#c9a962]'}`}>
+          Contact
+        </a>
+      </li>
+    </ul>
+
+    <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1 p-1 cursor-pointer bg-transparent border-none">
+      <span class="block w-6 h-0.5 bg-[#f5f5f5] transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-[#f5f5f5] transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-[#f5f5f5] transition-all duration-300"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 hidden flex-col items-center justify-center gap-8" style="background: rgba(10, 10, 10, 0.98);">
+    <a href="/" class={`text-2xl tracking-[0.15em] uppercase font-medium no-underline font-['Bebas_Neue',sans-serif] ${currentPath === '/' ? 'text-[#c9a962]' : 'text-[#f5f5f5]'}`}>Home</a>
+    <a href="/males" class={`text-2xl tracking-[0.15em] uppercase font-medium no-underline font-['Bebas_Neue',sans-serif] ${currentPath === '/males' ? 'text-[#c9a962]' : 'text-[#f5f5f5]'}`}>Males</a>
+    <a href="/females" class={`text-2xl tracking-[0.15em] uppercase font-medium no-underline font-['Bebas_Neue',sans-serif] ${currentPath === '/females' ? 'text-[#c9a962]' : 'text-[#f5f5f5]'}`}>Females</a>
+    <a href="/breedings" class={`text-2xl tracking-[0.15em] uppercase font-medium no-underline font-['Bebas_Neue',sans-serif] ${currentPath === '/breedings' ? 'text-[#c9a962]' : 'text-[#f5f5f5]'}`}>Breedings</a>
+    <a href="/contact" class={`text-2xl tracking-[0.15em] uppercase font-medium no-underline font-['Bebas_Neue',sans-serif] ${currentPath === '/contact' ? 'text-[#c9a962]' : 'text-[#f5f5f5]'}`}>Contact</a>
   </div>
-</header> 
+</header>
+
+<style>
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #c9a962;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  nav.scrolled {
+    background: rgba(10, 10, 10, 0.98) !important;
+    backdrop-filter: blur(20px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+</style>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // Scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+  });
+
+  // Mobile menu toggle
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    mobileMenu?.classList.toggle('flex');
+  });
+
+  // Close mobile menu when clicking a link
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      mobileMenu?.classList.remove('flex');
+    });
+  });
+</script>

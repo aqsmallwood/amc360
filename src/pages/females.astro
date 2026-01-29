@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import DogCard from '../components/DogCard.astro';
+import SectionHeader from '../components/SectionHeader.astro';
 import { getCollection } from 'astro:content';
 
 const femaleDogs = await getCollection('dogs', ({ id }) => {
@@ -9,14 +10,20 @@ const femaleDogs = await getCollection('dogs', ({ id }) => {
 ---
 
 <Layout title="Female Dogs">
-  <div class="container mx-auto px-4 py-12 max-w-4xl">
-    <div class="bg-stone-950 rounded-lg">
-      <h1 class="text-4xl mb-12 text-center font-logo font-semibold py-2">FEMALES</h1>
-    </div>
-    
-    <div class="grid grid-cols-1 gap-8  mx-auto max-w-2xl">
+  <!-- Page Header -->
+  <section class="pt-40 pb-20 px-8" style="background: #0a0a0a;">
+    <SectionHeader
+      label="Meet the Pack"
+      title="Our Females"
+      subtitle="Exceptional bloodlines, outstanding temperament, and remarkable structure"
+    />
+  </section>
+
+  <!-- Dogs Grid -->
+  <section class="py-20 px-8" style="background: #0a0a0a;">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {femaleDogs.map(dog => (
-        <DogCard 
+        <DogCard
           name={dog.data.name}
           longAlias={dog.data.longAlias}
           image={dog.data.image}
@@ -29,5 +36,5 @@ const femaleDogs = await getCollection('dogs', ({ id }) => {
         />
       ))}
     </div>
-  </div>
-</Layout> 
+  </section>
+</Layout>
